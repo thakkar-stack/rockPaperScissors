@@ -52,9 +52,16 @@ function playRound(playerSelection, computerSelection){
 function endGame(){
     if(computerScore > playerScore){
         console.log(`Wow you got beat by a computer! ${playerScore}:${computerScore}`)
+        playerScore = 0;
+        computerScore = 0;
     } 
     else if(computerScore < playerScore){
         console.log(`Congrats you beat the computer! ${playerScore}:${computerScore}`)
+        playerScore = 0;
+        computerScore = 0;
     }
-    else console.log(`Close one it was a tie! ${playerScore}:${computerScore}`)
+    else 
+        console.log(`Close one it was a tie! ${playerScore}:${computerScore}`)
+        playerScore = 0;
+        computerScore = 0;
 }
