@@ -1,6 +1,16 @@
 let playerScore = 0;
 let computerScore = 0;
 
+function playGame(){
+    while (!(playerScore === 5 || computerScore === 5)){
+        playRound();
+
+        if(playerScore === 5 || computerScore === 5){
+            endGame();
+        }
+    }
+}
+
 function getComputerChoice(){
     let choices = ['r', 'p', 's'];
     return choices[Math.floor(Math.random() * choices.length)];
@@ -38,15 +48,6 @@ function playRound(playerSelection, computerSelection){
     } else console.log(`${playerSelection} is not an option! Pick again.`)
 }
 
-function playGame(){
-    while (!(playerScore === 5 || computerScore === 5)){
-        playRound();
-
-        if(playerScore === 5 || computerScore === 5){
-            endGame();
-        }
-    }
-}
 
 function endGame(){
     if(computerScore > playerScore){
