@@ -39,7 +39,7 @@ function playRound(playerSelection, computerSelection){
 function playGame(){
     while (!(playerScore == 5 || computerScore == 5)){
         playRound();
-        
+
         if(playerScore === 5 || computerScore === 5){
             endGame();
         }
@@ -55,3 +55,5 @@ function endGame(){
     }
     else console.log(`Close one it was a tie! ${playerScore}:${computerScore}`)
 }
+
+playGame();
