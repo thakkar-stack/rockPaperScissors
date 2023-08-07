@@ -7,7 +7,7 @@ function getComputerChoice(){
 }
 
 function playRound(playerSelection, computerSelection){
-    playerSelection = prompt('Rock(r)?, Paper(p)? or Scissors(s)?:');
+    playerSelection = prompt('Rock(r)?, Paper(p)? or Scissors(s)?:').toLowerCase();
     computerSelection = getComputerChoice();
 
     if(playerSelection === 'r' || playerSelection === 'p' || playerSelection === 's'){
@@ -57,5 +57,3 @@ function endGame(){
     }
     else console.log(`Close one it was a tie! ${playerScore}:${computerScore}`)
 }
-
-playGame();
