@@ -1,2 +1,2 @@
 # rockPaperScissors
-practice with javascript by building simplerock paper scissors game
+practice with javascript by building simple rock paper scissors game
