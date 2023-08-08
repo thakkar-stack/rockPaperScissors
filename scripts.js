@@ -16,6 +16,15 @@ function getComputerChoice(){
     return choices[Math.floor(Math.random() * choices.length)];
 }
 
+function resetScores(){
+    playerScore = 0;
+    computerScore = 0;
+}
+
+function trackScores(){
+    console.log(`Your score: ${playerScore}. Computer score: ${computerScore}`);
+}
+
 function playRound(playerSelection, computerSelection){
     playerSelection = prompt('Rock(r)?, Paper(p)? or Scissors(s)?:').toLowerCase();
     computerSelection = getComputerChoice();
@@ -23,27 +32,27 @@ function playRound(playerSelection, computerSelection){
     if(playerSelection === 'r' || playerSelection === 'p' || playerSelection === 's'){
         if(playerSelection === computerSelection){
             console.log(`${playerSelection} against ${computerSelection} is a tie!`);
-            console.log(`Your score: ${playerScore}. Computer score: ${computerScore}`);
+            trackScores();
         }
         else if(playerSelection === 'r' && computerSelection === 's'){
             console.log(`${playerSelection} against ${computerSelection} you win!`);
             playerScore++;
-            console.log(`Your score: ${playerScore}. Computer score: ${computerScore}`);
+            trackScores();
         }
         else if(playerSelection === 's' && computerSelection === 'p'){
             console.log(`${playerSelection} against ${computerSelection} you win!`);
             playerScore++;
-            console.log(`Your score: ${playerScore}. Computer score: ${computerScore}`);
+            trackScores();
         }
         else if(playerSelection === 'p' && computerSelection === 'r'){
             console.log(`${playerSelection} against ${computerSelection} you win!`);
             playerScore++;
-            console.log(`Your score: ${playerScore}. Computer score: ${computerScore}`);
+            trackScores();
         }
         else{
             console.log(`${playerSelection} against ${computerSelection} you lose!`);
             computerScore++;
-            console.log(`Your score: ${playerScore}. Computer score: ${computerScore}`);
+            trackScores();
         }
     } else console.log(`${playerSelection} is not an option! Pick again.`)
 }
@@ -51,17 +60,14 @@ function playRound(playerSelection, computerSelection){
 
 function endGame(){
     if(computerScore > playerScore){
-        console.log(`Wow you got beat by a computer! ${playerScore}:${computerScore}`)
-        playerScore = 0;
-        computerScore = 0;
+        console.log(`Wow you got beat by a computer! ${playerScore}:${computerScore}. Play again?`)
+        resetScores();
     } 
     else if(computerScore < playerScore){
-        console.log(`Congrats you beat the computer! ${playerScore}:${computerScore}`)
-        playerScore = 0;
-        computerScore = 0;
+        console.log(`Congrats you beat the computer! ${playerScore}:${computerScore}. Play again?`)
+        resetScores();
     }
     else 
-        console.log(`Close one it was a tie! ${playerScore}:${computerScore}`)
-        playerScore = 0;
-        computerScore = 0;
+        console.log(`Close one it was a tie! ${playerScore}:${computerScore}. Play again?`)
+        resetScores();
 }
